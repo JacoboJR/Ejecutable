@@ -1,0 +1,49 @@
+//Librerias
+#include <gtk/gtk.h>
+#include <stdio.h>
+
+//Variables
+GtkWidget *window;
+GtkLabel *mylabel;
+GtkSearchEntry *mysearch;
+int main(int argc, char *argv[])
+{
+	GtkBuilder *builder; 
+	gtk_init(&argc, &argv); //Inicia GTK
+	
+	builder = gtk_builder_new(); //Crea GTK UI Builder
+	gtk_builder_add_from_file(builder, "myui.glade", NULL);
+	
+	//Asignar las variables
+	window = GTK_WIDGET(gtk_builder_get_object(builder, "MyWindow")); //Carga la pantalla nombrada MyWindow 
+	mylabel = GTK_LABEL(gtk_builder_get_object(builder, "MyLabel")); //CArga la pantalla nombrada MyLabel
+	//mysearch = GTK_
+	
+	//Esencial para el GTK 
+	gtk_builder_connect_signals(builder, NULL);
+	g_object_unref(builder);
+	
+	gtk_widget_show_all(window); //Muestra la ventana 
+	gtk_main();  //Corre el progrmama
+	
+	return 0;
+}
+
+//Funcion para salir de la app
+void exit_app()
+{
+	printf("Exit app \n");
+	gtk_main_quit();
+}
+//Funcion cuando el boton es presionado
+void button_clicked()
+{
+	printf("Button clicked \n");
+	gtk_label_set_text(mylabel,"Envio de canciones\nAmor a Primera Vista\nQuiero Bailar\nAzul 3");
+}
+//Funcion cuando el boton 2 es presionado
+void button_clicked2()
+{
+	printf("Button clicked \n");
+	//gtk_label_set_text(mylabel,"Envio de prueba\nCancion 1\nCancion 2\nCancion 3");
+}
