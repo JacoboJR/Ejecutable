@@ -1,0 +1,26 @@
+//En linea de comandos 
+cd /etc/ssmtp
+//Cambiar al directorio donde se encuentran los servicios del correo 
+nano ssmtp.conf
+//Se abre el archivo para configurar el correo de donde se va a mandar
+	SERVER=jjr.ironc@gmail.com  //El correo al que se quiere acceder 
+	mailhub=smtp.gmail.com=587 //El dominio en este caso es gmail y necesita un puerto de acceso
+	AuthUser=jjr.ironc@gmail.com //Usuario del correo
+	AuthPass=Lunallena1 //Contraseña del correo 
+	UseTlS=YES //Proporcia comunicacion segura cuando envias por la red
+	UseSTARTTLS=YES //Inicia la comunicacion 
+	rewriteDomain=gmail.com //Se ingresa nuevamente es dominio
+	hostname=jacobo-VirtualBox //El nombre del host de la terminal que se esta mandando
+	FromLineOverride=YES //Del correo que se envia 
+ssmtp jacob.jiemenez.rangel@gmail.com //Se abre la sección que va dentro del correo y al correo que se va enviar.
+
+//Linea de comandos
+grep (palabra que se va a buscar) "nombre del archvivo" //Comando grep para la busqueda de linea por linea en archivos
+-i //Realiza la busqueda ignorando las letras Mayusculas
+-n //Realiza la busqueda y la trae en la linea que se encuentra
+
+//Linea de comandos para la ejecucion de la interfaz glade
+gedit myapp.c //Entra a la edición del archvio (.c)
+gcc -o MyApp myapp.c -Wall `pkg-config --cflags --libs gtk+-3.0` -export-dynamic --Realiza la compilación correcta del codigo
+./MyApp //Ejecuta la compilación de la interfaz 
+  
